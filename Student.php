@@ -75,7 +75,7 @@
 		}
 		public function readStudent()
 		{
-			
+			require "schoolConnect.php";
 			// statement maken
 			$sql = $conn->prepare("
 									select studentid, opleiding, naam, postcode 
@@ -96,9 +96,17 @@
 		{
 			
 		}
-		public function deleteStudent()
+		public function deleteStudent($studentid)
 		{
-			
+			require "schoolConnect.php";
+			// statement maken
+			$sql = $conn->prepare("
+									delete from studenten
+									where studentid = :studentid
+								 ");
+			// variabele in de statement zetten
+			$sql->bindParam(":studentid", $studentid);
+			$sql->execute();
 		}
 		public function searchStudent($studentid)
 		{

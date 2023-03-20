@@ -7,7 +7,7 @@
 		<h1>afdrukken studenten</h1>
 		<p>Dit zijn alle gegevens uit de studententabel.</p>
 		<?php
-			require "Student.php";			// nodig om object te make
+			require "Student.php";			// nodig om object te maken
 			$student1 = new Student();
 			$student1->readStudent();
 		?>
