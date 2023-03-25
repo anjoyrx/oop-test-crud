@@ -92,9 +92,26 @@
 				echo $this->postcode=$student["postcode"]. "<br/>";
 			}
 		}
-		public function updateStudent()
+		public function updateStudent($studentid)
 		{
-			
+			require "schoolConnect.php";
+			// gegevens uit het object in variabelen zetten 
+			$studentid;
+			$naam 		= $this->get_naam();
+			$postcode 	= $this->get_postcode();
+			$opleiding 	= $this->get_opleiding();
+			// statement maken
+			$sql = $conn->prepare("
+									update studenten
+									set opleiding=:opleiding, naam=:naam, postcode=:postcode
+									where studentid=:studentid
+								 ");
+			// variabelen in de statement zetten
+			$sql->bindParam(":studentid", $studentid);
+			$sql->bindParam(":opleiding", $opleiding);
+			$sql->bindParam(":naam", $naam);
+			$sql->bindParam(":postcode", $postcode);
+			$sql->execute();
 		}
 		public function deleteStudent($studentid)
 		{
@@ -125,7 +142,7 @@
 			// gegevens uit de array in het object stoppen
 			foreach($sql as $student)
 			{			
-				echo $student["studentid"]. "<br/>";		// geen eigenschap van object
+				//echo $student["studentid"]. "<br/>";		// geen eigenschap van object
 				$this->naam=$student["naam"];
 				$this->opleiding=$student["opleiding"];
 				$this->postcode=$student["postcode"];			
