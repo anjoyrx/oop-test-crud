@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>update student formulier 1</h1>
-			<form action="updateStudentFormulier2.php" method="post">
+		<form action="updateStudentFormulier2.php" method="post">
 			<label for="studentid">Studentid:</label>
 			<input type="text" id = "studentid" name="studentIdVak">
 			<input type="submit">

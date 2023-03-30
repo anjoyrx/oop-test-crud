@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>delete student formulier 1</h1>
-			<form action="deleteStudentFormulier2.php" method="post">
+		<form action="deleteStudentFormulier2.php" method="post">
 			<label for="studentid">Studentid:</label>
 			<input type="text" id = "studentid" name="studentIdVak">
 			<input type="submit">

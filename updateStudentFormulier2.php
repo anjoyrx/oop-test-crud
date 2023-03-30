@@ -22,10 +22,10 @@
 		<form action="updateStudentFormulier3.php" method="post">
 			<!-- $studentid mag niet meer gewijzigd worden -->
             <?php echo $studentid ?>
-            <input type="hidden" name="studentIdVak" value="<?php echo $studentid;  ?> "><br/>
-            <input type="text"   name="naamVak"      value="<?php echo $naam;     ?> "><br/>
+            <input type="hidden" name="studentIdVak" value="<?php echo $studentid; ?> "><br/>
+            <input type="text"   name="naamVak"      value="<?php echo $naam;      ?> "><br/>
             <input type="text"   name="postcodeVak"  value="<?php echo $postcode;  ?> "><br/>
-            <input type="text"   name="opleidingVak" value="<?php echo $opleiding;  ?> "><br/><br/>
+            <input type="text"   name="opleidingVak" value="<?php echo $opleiding; ?> "><br/><br/>
 			<input type="submit"><br/><br/>
 		</form>
 
